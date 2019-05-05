@@ -1,29 +1,30 @@
 {
-    "name": "omon-template",
-    "description": "This a good practise whit nuxt and typescript.",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "dev": "nuxt",
-        "build": "nuxt build",
-        "start": "nuxt start",
-        "generate": "nuxt generate",
-        "lint": "tslint",
-        "fonts": "fontmin client/assets/fonts/**/* client/assets/.fonts/"
-    },
-    "dependencies": {
-        "@nuxtjs/axios": "5.4.1",
-        "nuxt": "2.6.3",
-        "nuxt-property-decorator": "2.1.3",
-        "ts-node": "8.1.0",
-        "vuex-class": "0.3.2"
-    },
-    "devDependencies": {
-        "@nuxt/typescript": "2.6.3",
-        "@types/node": "10.14.6",
-        "@types/webpack-env": "1.13.9",
-        "fontmin": "^0.9.7-beta",
-        "stylelint": "^10.0.1",
-        "tslint": "^5.16.0"
-    }
+  "name": "omon-template",
+  "description": "This a good practise whit nuxt and typescript.",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "tslint",
+    "fonts": "fontmin client/assets/fonts/**/* client/assets/.fonts/"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "5.4.1",
+    "nuxt": "2.6.3",
+    "nuxt-i18n": "^5.10.0",
+    "nuxt-property-decorator": "2.1.3",
+    "ts-node": "8.1.0",
+    "vuex-class": "0.3.2"
+  },
+  "devDependencies": {
+    "@nuxt/typescript": "2.6.3",
+    "@types/node": "10.14.6",
+    "@types/webpack-env": "1.13.9",
+    "fontmin": "^0.9.7-beta",
+    "stylelint": "^10.0.1",
+    "tslint": "^5.16.0"
+  }
 }

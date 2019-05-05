@@ -1,3 +1,4 @@
+const modules = ["@nuxtjs/axios", "~/modules/i18n-json"];
 export default {
     srcDir: "./client",
     env: {},
@@ -16,6 +17,6 @@ export default {
     loading: { color: "#3B8070" },
     css: ["~/assets/styles/main.css"],
     build: {},
-    modules: ["@nuxtjs/axios"],
+    modules,
     axios: {}
 };
