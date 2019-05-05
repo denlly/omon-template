@@ -8,7 +8,8 @@
         "build": "nuxt build",
         "start": "nuxt start",
         "generate": "nuxt generate",
-        "lint": "tslint"
+        "lint": "tslint",
+        "fonts": "fontmin client/assets/fonts/**/* client/assets/.fonts/"
     },
     "dependencies": {
         "@nuxtjs/axios": "5.4.1",
@@ -21,6 +22,7 @@
         "@nuxt/typescript": "2.6.3",
         "@types/node": "10.14.6",
         "@types/webpack-env": "1.13.9",
+        "fontmin": "^0.9.7-beta",
         "stylelint": "^10.0.1",
         "tslint": "^5.16.0"
     }
