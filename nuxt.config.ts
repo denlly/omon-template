@@ -1,4 +1,5 @@
 export default {
+    srcDir: "./client",
     env: {},
     head: {
         title: "name",
