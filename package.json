@@ -28,6 +28,8 @@
     "@types/node": "10.14.6",
     "@types/webpack-env": "1.13.9",
     "fontmin": "^0.9.7-beta",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
     "stylelint": "^10.0.1",
     "tslint": "^5.16.0"
   }

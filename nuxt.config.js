@@ -28,7 +28,7 @@ module.exports = {
     loading: {
         color: "#3B8070"
     },
-    css: ["~/assets/styles/main.css"],
+    css: ["~/assets/styles/global.scss"],
     build: {},
     modules,
     axios: {}
