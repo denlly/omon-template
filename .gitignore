@@ -12,3 +12,5 @@ dist
 
 # fontmin generate
 **/.fonts
+
+configs/local*.js
