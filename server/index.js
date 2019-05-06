@@ -35,20 +35,10 @@ async function start() {
         const builder = new Builder(nuxt);
         await builder.build();
     }
-
     configureApi(app);
-
     // Give nuxt middleware to express
-
-    app.use(nuxt.render);
-    // app.use(await nuxt({
-    //     dev: isDev,
-    //     assets: path.join(__dirname, '__public__/dist', 'client'),
-    //     static: this.context.config('static'),
-    //     fallthrough(ctx) {
-    //         return /^\/(open\/api|api|sso)/i.test(ctx.originalUrl);
-    //     },
-    // }));
+    consola.info('nuxt.render');
+    app.use(nuxt.render);;
 
     // Listen the server
     app.listen(port, host);
