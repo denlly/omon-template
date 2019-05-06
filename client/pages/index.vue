@@ -1,9 +1,8 @@
 <template>
   <section>
-    <h1 class="header">Nuxt TypeScript Starter</h1>
+    <h1 class="header">Nuxt TypeScript Starter {{$t('links.home')}}</h1>
     <div class="cards">
       <Card v-for="person in memberData" :key="person.id" :person="person"></Card>
-      {{$t('links.home')}}
     </div>
   </section>
 </template>
