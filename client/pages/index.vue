@@ -2,17 +2,18 @@
   <section>
     <h1 class="header">Nuxt TypeScript Starter</h1>
     <div class="cards">
-      <Card v-for="person in people" :key="person.id" :person="person"></Card>
+      <Card v-for="person in memberData" :key="person.id" :person="person"></Card>
       {{$t('links.home')}}
     </div>
   </section>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "nuxt-property-decorator";
+import { Component, Vue, Inject } from "nuxt-property-decorator";
 import { State } from "vuex-class";
 import { Person } from "~/types";
 import Card from "~/components/Card.vue";
+import { IMemberService, MemberService } from "~/services";
 
 @Component({
   components: {
@@ -20,7 +21,20 @@ import Card from "~/components/Card.vue";
   }
 })
 export default class extends Vue {
-  @State people!: Person;
+  public memberData: number[] = null;
+  @Inject() memberService: IMemberService;
+
+  public async asyncData({ store, error }): Promise<{}> {
+    try {
+      debugger;
+      let member = new MemberService();
+      return {
+        memberData: await member.get()
+      };
+    } catch (e) {
+      error(e);
+    }
+  }
 }
 </script>
 

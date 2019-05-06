@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "esnext",
-        "module": "esnext",
+        "target": "es5",
+        "module": "commonjs",
         "moduleResolution": "node",
         "lib": [
             "esnext",
@@ -10,6 +10,7 @@
         ],
         "esModuleInterop": true,
         "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
         "sourceMap": true,
         "strict": true,
         "allowSyntheticDefaultImports": true,
@@ -22,7 +23,8 @@
         "types": [
             "@nuxt/vue-app",
             "@types/node",
-            "@types/webpack-env"
+            "@types/webpack-env",
+            "reflect-metadata"
         ]
     }
 }
