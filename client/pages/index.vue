@@ -21,7 +21,7 @@ import { IMemberService, MemberService } from "~/services";
 })
 export default class extends Vue {
   public memberData: number[] = null;
-  @Inject() memberService: IMemberService;
+  // @Inject() memberService: IMemberService;d
 
   public async asyncData({ store, error }): Promise<{}> {
     try {
