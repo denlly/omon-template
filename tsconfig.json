@@ -1,12 +1,11 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
+        "module": "es2015",
         "moduleResolution": "node",
         "lib": [
-            "esnext",
-            "esnext.asynciterable",
-            "dom"
+            "dom",
+            "es7"
         ],
         "esModuleInterop": true,
         "experimentalDecorators": true,
@@ -18,7 +17,7 @@
         "baseUrl": ".",
         "resolveJsonModule": true,
         "paths": {
-            "~/*": ["./client/*"]
+            "@/*": ["./client/*"]
         },
         "types": [
             "@nuxt/vue-app",

@@ -13,7 +13,7 @@ export function containerBuilder(store: any): Container {
     // Bind Services
     container
         .bind<s.IMemberService>(injectId(s.MemberService))
-        .to(s.MemberService)
-        .inSingletonScope();
+        .to(s.MemberService);
+    store.state.container = container;
     return container;
 }
