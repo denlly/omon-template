@@ -1,6 +1,7 @@
 <template>
 	<section>
 		<h1 class="header">Nuxt TypeScript Starter {{ $t("links.home") }}</h1>
+        <Button type="primary">Primary</Button>
 		<div class="cards">
 			<Card
 				v-for="person in memberData"
@@ -9,7 +10,7 @@
 			></Card>
 		</div>
 
-    <Button type="primary">Primary</Button>
+    
 	</section>
 </template>
 

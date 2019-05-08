@@ -69,4 +69,5 @@ module.exports = {
     },
     // use nuxt-axios ，plugin fetch invalid
     // plugins: ['~/plugins/fetch/index.ts'] 
+    plugins: ['~/plugins/nuxt-iview.ts']
 };
