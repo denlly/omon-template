@@ -1,4 +1,3 @@
-
 const head = {
     title: "name",
     meta: [{
@@ -31,7 +30,7 @@ const axios = {
     credentials: true,
     debug: false,
     progress: false,
-},
+};
 const modules = ["@nuxtjs/axios", "~/modules/i18n-json"];
 // export default {
 module.exports = {
