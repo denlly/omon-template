@@ -6,7 +6,7 @@ import { containerBuilder } from "~/services/container.builder";
 
 import * as config from "./modules/config";
 import { State as ConfigState } from "./modules/config";
-
+import "reflect-metadata";
 export type Store = VuexStore<RootState>;
 export type Config = ConfigState;
 
@@ -39,7 +39,6 @@ const createStore = () => {
             config
         }
     });
-
     containerSetter(containerBuilder(store));
     return store;
 };

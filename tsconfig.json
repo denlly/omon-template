@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
+        "target": "esnext",
+        "module": "esnext",
         "moduleResolution": "node",
         "lib": [
             "esnext",
@@ -10,7 +10,6 @@
         ],
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
         "sourceMap": true,
         "strict": true,
         "allowSyntheticDefaultImports": true,
@@ -18,7 +17,7 @@
         "baseUrl": ".",
         "resolveJsonModule": true,
         "paths": {
-            "~/*": ["./client/*"]
+            "@/*": ["./client/*"]
         },
         "types": [
             "@nuxt/vue-app",

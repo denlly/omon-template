@@ -1,4 +1,4 @@
-import { container } from "~/services/container";
+import { container, containerGetter } from "~/services/container";
 import "reflect-metadata";
 /**
  * @param key the name of the property,
@@ -22,12 +22,14 @@ export function Inject(id?: string | symbol) {
         const generatedId = id || keyToId(key);
 
         const getter = () => {
-            return container ? container.get(generatedId) : {};
+            return container ? containerGetter(generatedId) : {};
         };
+
+        // const getter = containerGetter(generatedId);
 
         Reflect.deleteProperty[key];
         Reflect.defineProperty(target, key, {
-            get: getter
+            value: getter
         });
     };
 }
@@ -36,6 +38,7 @@ export function Inject(id?: string | symbol) {
  * @param target the class to generate the name
  */
 export function injectId(target: any): string {
+    debugger;
     return keyToId(target.name);
 }
 
