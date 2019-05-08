@@ -31,5 +31,11 @@ module.exports = {
     css: ["~/assets/styles/global.scss"],
     build: {},
     modules,
-    axios: {}
+    axios: {},
+    render: {
+        // production use 9 level
+        gzip: {
+            threshold: 9
+        }
+    },
 };
