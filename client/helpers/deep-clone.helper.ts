@@ -7,7 +7,7 @@ export function deepClone(source: any): any {
         let dest: any = Array.isArray(source) ? [] : {};
         Object.keys(source).forEach(key => {
             value = source[key];
-            dest[key] = typeof value === "object" ? deepClone(value) : value;
+            dest[key] = typeof value === 'object' ? deepClone(value) : value;
         });
         return dest;
     } catch (e) {

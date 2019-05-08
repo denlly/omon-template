@@ -32,6 +32,22 @@ const axios = {
     progress: false,
 };
 const modules = ["@nuxtjs/axios", "~/modules/i18n-json"];
+const build = {
+    extend(config, {
+        isDev,
+        isClient
+    }) {
+        if (isDev && isClient) {
+            config.module.rules.push({
+                enforce: 'pre',
+                test: /\.(ts|vue)$/,
+                loader: 'tslint-loader',
+                exclude: /(node_modules)/
+            })
+        }
+    }
+};
+
 // export default {
 module.exports = {
     mode: 'universal',
@@ -42,7 +58,7 @@ module.exports = {
         color: "#3B8070"
     },
     css: ["~/assets/styles/global.scss"],
-    build: {},
+    build,
     modules,
     axios,
     render: {

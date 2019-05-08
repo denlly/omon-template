@@ -8,6 +8,8 @@
 				:person="person"
 			></Card>
 		</div>
+
+    <Button type="primary">Primary</Button>
 	</section>
 </template>
 

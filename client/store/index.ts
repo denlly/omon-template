@@ -1,12 +1,12 @@
-import { RootState, Person } from "~/types";
-import Vuex, { MutationTree, ActionTree, Store as VuexStore } from "vuex";
+import { RootState, Person } from '~/types';
+import Vuex, { MutationTree, ActionTree, Store as VuexStore } from 'vuex';
 
-import { containerSetter } from "~/services/container";
-import { containerBuilder } from "~/services/container.builder";
+import { containerSetter } from '~/services/container';
+import { containerBuilder } from '~/services/container.builder';
 
-import * as config from "./modules/config";
-import { State as ConfigState } from "./modules/config";
-import "reflect-metadata";
+import * as config from './modules/config';
+import { State as ConfigState } from './modules/config';
+import 'reflect-metadata';
 export type Store = VuexStore<RootState>;
 export type Config = ConfigState;
 
