@@ -1,5 +1,6 @@
+const localRandomData = require("../../../client/static/random-data.json")
 const get = (req, res) => {
-    res.json([1, 2, 3, 4])
+    res.json(localRandomData)
 };
 
 module.exports = {

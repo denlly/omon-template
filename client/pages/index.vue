@@ -31,15 +31,16 @@ export default class extends Vue {
 	@inject("IMemberService")
 	private memberService: MemberService;
 
-	public async asyncData({ store, self, error }): Promise<any> {
+	async asyncData({ $axios, store, self, error }): Promise<any> {
 		try {
-			debugger;
-			let member = new MemberService();
 
+			let members = await $axios.$get("members");
+			members = members.slice(0, 100);
+			// let thesuper = super;
 			// let memb = container.get<IMemberService>("MemberService");
 			// let ms = store.state.container.get<IMemberService>("IMemberService");
 			return {
-				memberData: await member.get()
+				memberData: members
 			};
 		} catch (e) {
 			error(e);
