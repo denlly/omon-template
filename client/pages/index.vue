@@ -9,8 +9,6 @@
 				:person="person"
 			></Card>
 		</div>
-
-    
 	</section>
 </template>
 
@@ -48,6 +46,8 @@ export default class extends Vue {
 		} catch (e) {
 			error(e);
 		}
+	}
+	amount(){
 	}
 }
 </script>

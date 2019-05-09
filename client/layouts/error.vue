@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "nuxt-property-decorator";
-import {Error} from  "@/types/error";
+import {Error} from  "@/models/error";
 export default class extends Vue {
     private name: string = 'layout-error';
     @Prop({type: Error, required: false}) error! : Error

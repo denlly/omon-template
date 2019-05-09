@@ -15,5 +15,5 @@ export default class Card extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-@import "../assets/styles/components/card.scss";
+@import "@/assets/styles/components/card.scss";
 </style>
