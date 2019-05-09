@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "generate": "nuxt generate",
-    "lint": "tslint -c tslint.json ''clients/**/*.ts''",
+    "lint": "tslint -c tslint.json ''client/**/*.ts''",
     "predev": "npm run fonts",
     "fonts": "fontmin client/assets/fonts/**/* client/assets/.fonts/"
   },
