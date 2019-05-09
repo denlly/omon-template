@@ -20,7 +20,7 @@
 					<div slot="top" class="logo-con">
 						<!--[TODO: change svg logo] -->
 						<!-- <img v-show="!shrink" src="../assets/images/logo.jpg" key="max-logo" />
-              <img v-show="shrink" src="../assets/images/logo-min.jpg" key="min-logo" />-->
+                        <img v-show="shrink" src="../assets/images/logo-min.jpg" key="min-logo" />-->
 					</div>
 				</shrinkable-menu>
 			</div>
@@ -48,11 +48,41 @@
 						</Button>
 					</div>
 					<div class="header-middle-con">
-						<div class="main-breadcrumb">
+						<div class="main-button-group">
+							<!-- -->
+							<Button-group class="main-button-group__list">
+								<Button
+									type="ghost"
+									class="main-button-group__item"
+									>站点</Button
+								>
+								<Button
+									type="ghost"
+									class="main-button-group__item"
+									>应用</Button
+								>
+								<Button
+									type="ghost"
+									class="main-button-group__item"
+									>会员</Button
+								>
+								<Button
+									type="ghost"
+									class="main-button-group__item"
+									>订单</Button
+								>
+								<Button
+									type="ghost"
+									class="main-button-group__item"
+									>控制面板</Button
+								>
+							</Button-group>
+						</div>
+						<!-- <div class="main-breadcrumb">
 							<breadcrumb-nav
 								:currentPath="currentPath"
 							></breadcrumb-nav>
-						</div>
+						</div> -->
 					</div>
 					<div class="header-avator-con">
 						<full-screen
