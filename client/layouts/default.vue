@@ -49,34 +49,7 @@
 					</div>
 					<div class="header-middle-con">
 						<div class="main-button-group">
-							<!-- -->
-							<Button-group class="main-button-group__list">
-								<Button
-									type="ghost"
-									class="main-button-group__item"
-									>站点</Button
-								>
-								<Button
-									type="ghost"
-									class="main-button-group__item"
-									>应用</Button
-								>
-								<Button
-									type="ghost"
-									class="main-button-group__item"
-									>会员</Button
-								>
-								<Button
-									type="ghost"
-									class="main-button-group__item"
-									>订单</Button
-								>
-								<Button
-									type="ghost"
-									class="main-button-group__item"
-									>控制面板</Button
-								>
-							</Button-group>
+						<main-top-nav></main-top-nav>
 						</div>
 						<!-- <div class="main-breadcrumb">
 							<breadcrumb-nav
@@ -145,7 +118,7 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
-
+import MainTopNav from '@/components/shards/main-top-nav.vue';
 // import shrinkableMenu from '@/components/main-components/shrinkable-menu/shrinkable-menu.vue'
 // import tagsPageOpened from '@/components/main-components/tags-page-opened.vue'
 // import breadcrumbNav from '@/components/main-components/breadcrumb-nav.vue'
@@ -156,7 +129,9 @@ import { Component, Vue } from "nuxt-property-decorator";
 // import fullScreen from '../components/main-components/fullscreen.vue'
 
 @Component({
-	components: {}
+	components: {
+		MainTopNav,
+	}
 })
 export default class extends Vue {
 	get menuList() {
