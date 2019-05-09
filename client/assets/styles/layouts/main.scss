@@ -97,9 +97,11 @@
         box-shadow: 0 2px 1px 1px rgba(100, 100, 100, 0.1);
         position: relative;
         z-index: 11;
+        vertical-align: middle;
         .navicon-con {
-            margin: 6px;
+            margin: 13px;
             display: inline-block;
+            outline: none;
         }
         .header-middle-con {
             position: absolute;

@@ -1,4 +1,4 @@
-import { Container } from 'inversify';
+import { Container } from "inversify";
 
 export let container: Container;
 
@@ -7,6 +7,6 @@ export function containerSetter(_container: Container) {
 }
 export function containerGetter(id: string): {} {
     let servicemodule = container.get(id);
-    debugger;
+    // debugger;
     return servicemodule;
 }

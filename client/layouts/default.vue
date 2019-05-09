@@ -41,7 +41,10 @@
 							type="text"
 							@click="toggleClick"
 						>
-							<Icon type="navicon" size="32"></Icon>
+							<i
+								class="fas fa-chevron-circle-left"
+								style="font-size: 24px;"
+							></i>
 						</Button>
 					</div>
 					<div class="header-middle-con">

@@ -20,7 +20,10 @@ const head = {
             type: "image/x-icon",
             href: "/favicon.ico"
         },
-        { rel: "stylesheet", name: "iview", href: "/styles/iview.css" }
+        {
+            rel: "stylesheet",
+            href: "/fontawesome/5.0.13/fontawesome-all.min.css?20180920"
+        }
     ]
 };
 const axios = {
@@ -58,7 +61,12 @@ module.exports = {
     loading: {
         color: "#3B8070"
     },
-    css: ["~/assets/styles/global.scss", { src: "~/assets/styles/main.css" }],
+    css: [
+        {
+            src: "iview/dist/styles/iview.css"
+        },
+        "~/assets/styles/global.scss"
+    ],
     build,
     modules,
     axios,

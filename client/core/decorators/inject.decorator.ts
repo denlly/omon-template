@@ -38,7 +38,7 @@ export function Inject(id?: string | symbol) {
  * @param target the class to generate the name
  */
 export function injectId(target: any): string {
-    debugger;
+    // debugger;
     return keyToId(target.name);
 }
 
