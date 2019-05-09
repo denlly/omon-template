@@ -12,10 +12,12 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name: 'layout-error',
-        props: ['error'],
+<script lang="ts">
+import { Component, Vue, Prop } from "nuxt-property-decorator";
+import {Error} from  "@/types/error";
+export default class extends Vue {
+        private name: string = 'layout-error';
+        @Prop({type: Error, required: false}) error! : Error
         head() {
             return {
                 title: this.error.message || 'An error occured'
