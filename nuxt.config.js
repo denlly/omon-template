@@ -1,6 +1,7 @@
 const head = {
     title: "name",
-    meta: [{
+    meta: [
+        {
             charset: "utf-8"
         },
         {
@@ -13,51 +14,51 @@ const head = {
             content: "description"
         }
     ],
-    link: [{
-        rel: "icon",
-        type: "image/x-icon",
-        href: "/favicon.ico"
-    }]
+    link: [
+        {
+            rel: "icon",
+            type: "image/x-icon",
+            href: "/favicon.ico"
+        },
+        { rel: "stylesheet", name: "iview", href: "/styles/iview.css" }
+    ]
 };
 const axios = {
-    host: '',
+    host: "",
     port: 3000,
-    prefix: '/api',
+    prefix: "/api",
     retry: {
         retries: 3
     },
     https: false,
     credentials: true,
     debug: false,
-    progress: false,
+    progress: false
 };
 const modules = ["@nuxtjs/axios", "~/modules/i18n-json"];
 const build = {
-    extend(config, {
-        isDev,
-        isClient
-    }) {
+    extend(config, { isDev, isClient }) {
         if (isDev && isClient) {
             config.module.rules.push({
-                enforce: 'pre',
+                enforce: "pre",
                 test: /\.(ts|vue)$/,
-                loader: 'tslint-loader',
+                loader: "tslint-loader",
                 exclude: /(node_modules)/
-            })
+            });
         }
     }
 };
 
 // export default {
 module.exports = {
-    mode: 'universal',
+    mode: "universal",
     srcDir: "./client",
     env: {},
     head,
     loading: {
         color: "#3B8070"
     },
-    css: ["~/assets/styles/global.scss"],
+    css: ["~/assets/styles/global.scss", { src: "~/assets/styles/main.css" }],
     build,
     modules,
     axios,
@@ -68,6 +69,8 @@ module.exports = {
         }
     },
     // use nuxt-axios ，plugin fetch invalid
-    // plugins: ['~/plugins/fetch/index.ts'] 
-    plugins: ['~/plugins/nuxt-iview.ts']
+    // plugins: ['~/plugins/fetch/index.ts']
+    plugins: ["~/plugins/nuxt-iview.ts"],
+    // [TODO:follow https://shelter.lancercomet.com/2018/02/06/nuxt-with-ts-setup/]
+    vendor: ["babel-polyfill", "eventsource-polyfill"]
 };

@@ -73,7 +73,7 @@ export default class extends Vue {
         setTimeout(() => {
             this.loading = false;
             this.$Message.success('恭喜您，登录成功！')
-            window.location.href = "/";
+            window.location.href = "/home";
         }, 3000);
     };
 }
