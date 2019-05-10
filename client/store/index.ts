@@ -32,7 +32,7 @@ export type Config = ConfigState;
 //         commit("setPeople", people.slice(0, 10));
 //     }
 // };
-debugger;
+// debugger;
 const createStore = () => {
     const store: Store = new Vuex.Store({
         modules: {

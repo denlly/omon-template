@@ -46,7 +46,6 @@ export default class extends Vue {
 	];
 
 	doClick(nav) {
-        debugger;
 		switch (nav.name) {
             case "home":
                 this.$router.push({name:"home"});

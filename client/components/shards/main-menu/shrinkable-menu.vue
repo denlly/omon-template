@@ -71,7 +71,6 @@ export default class extends Vue {
 	readonly accordion!: [];
 
 	get bgColor() {
-		debugger;
 		return this.theme === ThemeEnum.dark ? "#495060" : "#fff";
 	}
 	get shrinkIconColor() {
