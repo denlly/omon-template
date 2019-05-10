@@ -20,6 +20,7 @@ const head = {
             type: "image/x-icon",
             href: "/favicon.ico"
         },
+        { rel: "stylesheet", name: "iview", href: "/iview.css" },
         {
             rel: "stylesheet",
             href: "/fontawesome/5.0.13/fontawesome-all.min.css?20180920"
@@ -78,7 +79,7 @@ module.exports = {
     },
     // use nuxt-axios ，plugin fetch invalid
     // plugins: ['~/plugins/fetch/index.ts']
-    plugins: ["~/plugins/nuxt-iview.ts"],
+    plugins: [{ src: "~/plugins/nuxt-iview.ts", ssr: true }],
     // [TODO:follow https://shelter.lancercomet.com/2018/02/06/nuxt-with-ts-setup/]
-    vendor: ["babel-polyfill", "eventsource-polyfill"]
+    vendor: ["babel-polyfill", "eventsource-polyfill", "iview", "./plugins/nuxt-iview.js"]
 };
