@@ -26,7 +26,7 @@
 						/>
 						<img
 							v-show="shrink"
-							src="../assets/images/logo-mini.svg"
+							src="../assets/images/logo-mini.png"
 							key="min-logo"
 						/>
 					</div>
