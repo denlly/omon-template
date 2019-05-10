@@ -124,7 +124,7 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 import MainTopNav from "@/components/shards/main-top-nav.vue";
-// import shrinkableMenu from '@/components/main-components/shrinkable-menu/shrinkable-menu.vue'
+import ShrinkableMenu from "@/components/shards/main-menu/shrinkable-menu.vue";
 // import tagsPageOpened from '@/components/main-components/tags-page-opened.vue'
 // import breadcrumbNav from '@/components/main-components/breadcrumb-nav.vue'
 // import lockScreen from '@/components/main-components/lockscreen/lockscreen.vue'
@@ -136,6 +136,7 @@ import MessageTip from "@/components/shards/message-tip.vue";
 @Component({
 	components: {
 		MainTopNav,
+		ShrinkableMenu,
 		// FullScreen,
 		MessageTip
 	}

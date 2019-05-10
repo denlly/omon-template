@@ -29,7 +29,7 @@
 import { Component, Vue, Prop } from "nuxt-property-decorator";
 import sidebarMenu from "./sidebar-menu.vue";
 import sidebarMenuShrink from "./sidebar-menu-shrink.vue";
-import {ThemeEnum} from "@/enums/theme.enum"
+import { ThemeEnum } from "@/enums/theme.enum";
 @Component({
 	components: {
 		sidebarMenu,
@@ -38,47 +38,45 @@ import {ThemeEnum} from "@/enums/theme.enum"
 })
 export default class extends Vue {
 	@Prop({
-        type: Boolean,
-        default: false
-    }) 
-    readonly shrink!: boolean;
+		type: Boolean,
+		default: false
+	})
+	readonly shrink!: boolean;
 
-    @Prop({
-        type: Array,
-        required: true
-    }) 
-    readonly menuList!: [];
+	@Prop({
+		type: Array,
+		required: true
+	})
+	readonly menuList!: [];
 
-    @Prop({
-        type: String,
-        default: ThemeEnum.dark
-    }) 
-    readonly theme !: ThemeEnum;
-    @Prop({
-            type: Function,
-        }) 
-    beforePush!: Function ;
+	@Prop({
+		type: String,
+		default: ThemeEnum.dark
+	})
+	readonly theme!: ThemeEnum;
+	@Prop({
+		type: Function
+	})
+	beforePush!: Function;
 
-    @Prop({
-            type: Array,
-        },
-    ) 
-    readonly openNames!: [];
+	@Prop({
+		type: Array
+	})
+	readonly openNames!: [];
 
-        @Prop({
-            type: Boolean,
-            default: false
-        },
-    ) 
-    readonly accordion!: [];
+	@Prop({
+		type: Boolean,
+		default: false
+	})
+	readonly accordion!: [];
 
 	get bgColor() {
 		return this.theme === ThemeEnum.dark ? "#495060" : "#fff";
 	}
 	get shrinkIconColor() {
-		return this.theme === ThemeEnum.dark  ? "#fff" : "#495060";
-    }
-    
+		return this.theme === ThemeEnum.dark ? "#fff" : "#495060";
+	}
+
 	handleChange(name: any) {
 		let willpush = true;
 		if (this.beforePush !== undefined) {
@@ -94,5 +92,4 @@ export default class extends Vue {
 		this.$emit("on-change", name);
 	}
 }
-
 </script>
