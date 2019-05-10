@@ -1,12 +1,12 @@
-import { RootState, Person } from '~/types';
-import Vuex, { MutationTree, ActionTree, Store as VuexStore } from 'vuex';
+import { RootState, Person } from "~/types";
+import Vuex, { MutationTree, ActionTree, Store as VuexStore } from "vuex";
 
-import { containerSetter } from '~/services/container';
-import { containerBuilder } from '~/services/container.builder';
-import app from './modules/app';
-import * as config from './modules/config';
-import { State as ConfigState } from './modules/config';
-import 'reflect-metadata';
+import { containerSetter } from "~/services/container";
+import { containerBuilder } from "~/services/container.builder";
+import app from "./modules/app";
+import * as config from "./modules/config";
+import { State as ConfigState } from "./modules/config";
+import "reflect-metadata";
 export type Store = VuexStore<RootState>;
 export type Config = ConfigState;
 
@@ -32,12 +32,12 @@ export type Config = ConfigState;
 //         commit("setPeople", people.slice(0, 10));
 //     }
 // };
-
+debugger;
 const createStore = () => {
     const store: Store = new Vuex.Store({
         modules: {
             app,
-            config,
+            config
         }
     });
     containerSetter(containerBuilder(store));

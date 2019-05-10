@@ -1,7 +1,8 @@
-import * as router from "@/router/router";
+import * as allRouters from "@/router/router";
 import Util from "@/libs/util";
 import Cookies from "js-cookie";
 import Vue from "vue";
+import { ThemeEnum } from "@/enums/theme.enum";
 
 const app = {
     state: {
@@ -10,15 +11,15 @@ const app = {
         lang: "zh-CN",
         isFullScreen: false,
         openedSubmenuArr: [], // 要展开的菜单数组
-        menuTheme: "dark", // 主题
+        menuTheme: ThemeEnum.dark, // 主题
         themeColor: "", // Theme Switch
         pageOpenedList: [], // 打开的页面列表
         currentPageName: "",
         currentPath: [], // 面包屑数组
         menuList: [],
-        routers: [...router.other, ...router.dashboard], // 总路由
+        routers: [...allRouters.other, ...allRouters.dashboard], // 总路由
         currentRouterGroup: "dashboard",
-        tagsList: [...router.other, ...router.dashboard], // tags-page-opened
+        tagsList: [...allRouters.other, ...allRouters.dashboard], // tags-page-opened
         messageCount: 0,
         accordion: true,
         avatarImgPath: ""
@@ -36,8 +37,9 @@ const app = {
         },
         updateMenulist(state) {
             let accessCode = parseInt(Cookies.get("access"));
+
             let menuList = [];
-            appRouter.forEach((item, index) => {
+            allRouters[state.currentRouterGroup].forEach((item, index) => {
                 if (item.access !== undefined) {
                     if (Util.showThisRoute(item.access, accessCode)) {
                         if (item.children.length === 1) {

@@ -15,7 +15,7 @@
 					:open-names="openedSubmenuArr"
 					:theme="menuTheme"
 					:accordion="accordion"
-					:menu-list="menuList"
+					:menuList="menuList"
 				>
 					<div slot="top" class="logo-con">
 						<!--[TODO: change svg logo] -->
@@ -234,6 +234,41 @@ export default class extends Vue {
 			return true;
 		}
 	}
+
+	//   watch: {
+	//     $route(to) {
+	//       this.$store.commit('setCurrentPageName', to.name)
+	//       let pathArr = util.setCurrentPath(this, to.name)
+	//       if (pathArr.length > 2) {
+	//         this.$store.commit('addOpenSubmenu', pathArr[1].name)
+	//       }
+	//       this.checkTag(to.name)
+	//       localStorage.currentPageName = to.name
+	//       this.$store.commit('setAccordion', true)
+	//     },
+	//     openedSubmenuArr() {
+	//       setTimeout(() => {
+	//         this.scrollBarResize()
+	//       }, 300)
+	//     }
+	//   },
+
+	mounted() {
+		// this.init()
+		//this.$store.commit('setOpenedList')
+		// this.checkTag(this.$route.name);
+		//刷新页面时，重新获取头像
+		this.userName = this.$store.state.user.info.name;
+		this.$store.commit("setAvator", "");
+	}
+	created() {
+		/**服务端渲染左侧导航条及pannel页面内容**/
+		// this.currentPageName = this.$route.name;
+		// util.setCurrentPath(this, this.$route.name);
+		this.$store.commit("updateMenulist");
+		/**服务端渲染左侧导航条及pannel页面内容**/
+	}
+	dispatch() {}
 }
 </script>
 

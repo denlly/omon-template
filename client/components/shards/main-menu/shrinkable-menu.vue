@@ -47,7 +47,7 @@ export default class extends Vue {
 		type: Array,
 		required: true
 	})
-	readonly menuList!: [];
+	menuList!: [];
 
 	@Prop({
 		type: String,
@@ -71,6 +71,7 @@ export default class extends Vue {
 	readonly accordion!: [];
 
 	get bgColor() {
+		debugger;
 		return this.theme === ThemeEnum.dark ? "#495060" : "#fff";
 	}
 	get shrinkIconColor() {

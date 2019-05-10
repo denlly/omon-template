@@ -5,7 +5,6 @@
 		:open-names="openNames"
 		:theme="menuTheme"
 		width="auto"
-		z
 		@on-select="changeMenu"
 	>
 		<template v-for="item in menuList">
@@ -53,7 +52,7 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 @Component({
-    name: 'om-sidebar-menu',
+	name: "om-sidebar-menu",
 	props: {
 		menuList: Array,
 		iconSize: Number,
@@ -64,7 +63,7 @@ import { Component, Vue } from "nuxt-property-decorator";
 		openNames: {
 			type: Array
 		}
-    },
+	}
 })
 export default class extends Vue {
 	changeMenu(active) {
@@ -76,18 +75,17 @@ export default class extends Vue {
 		} else {
 			return item.title;
 		}
-    }
-    updated(){
-         this.$nextTick(() => {
-            if (this.$refs.sideMenu) {
-                this.$refs.sideMenu.updateOpened();
-            }
-        });
-    }
-    
+	}
+	updated() {
+		this.$nextTick(() => {
+			if (this.$refs.sideMenu) {
+				this.$refs.sideMenu.updateOpened();
+			}
+		});
+	}
 }
 </script>
 
 <style lang="scss">
-@import './sidebar-menu.scss';
+@import "./sidebar-menu.scss";
 </style>
