@@ -65,7 +65,7 @@
 								></breadcrumb-nav>
 							</div> -->
 					</div>
-					<div class="header-avator-con">
+					<div class="header-avatar-con">
 						<!-- <full-screen v-model="isFullScreen" @on-change="fullscreenChange"></full-screen> -->
 						<!-- <lock-screen></lock-screen> -->
 						<message-tip :unread="mesCount"></message-tip>
@@ -83,7 +83,7 @@
 									@on-click="handleClickUserDropdown"
 								>
 									<Avatar
-										:src="avatorPath"
+										:src="avatarPath"
 										style="background: #619fe7;margin-left: 10px; background: url('https://robohash.org/Sebastien_Thorsby') no-repeat center center; background-size: cover;"
 									>
 									</Avatar>
@@ -159,8 +159,8 @@ export default class extends Vue {
 	get currentPath() {
 		return this.$store.state.app.currentPath; // 当前面包屑数组
 	}
-	get avatorPath() {
-		return this.$store.state.app.avatorImgPath;
+	get avatarPath() {
+		return this.$store.state.app.avatarImgPath;
 	}
 	get cachePage() {
 		return this.$store.state.app.cachePage;

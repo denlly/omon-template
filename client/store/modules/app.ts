@@ -6,12 +6,13 @@ import Vue from "vue";
 const app = {
     state: {
         cachePage: [],
-        lang: "",
+        notCache: ["text-editor", "artical-publish"], // 在这里定义你不想要缓存的页面的name属性值(参见路由配置router.js)
+        lang: "zh-CN",
         isFullScreen: false,
         openedSubmenuArr: [], // 要展开的菜单数组
         menuTheme: "dark", // 主题
-        themeColor: "",
-        pageOpenedList: [],
+        themeColor: "", // Theme Switch
+        pageOpenedList: [], // 打开的页面列表
         currentPageName: "",
         currentPath: [], // 面包屑数组
         menuList: [],
@@ -19,8 +20,7 @@ const app = {
         tagsList: [otherRouter, ...appRouter], // tags-page-opened
         messageCount: 0,
         accordion: true,
-        avatorImgPath: "",
-        dontCache: ["text-editor", "artical-publish"] // 在这里定义你不想要缓存的页面的name属性值(参见路由配置router.js)
+        avatarImgPath: ""
     },
     mutations: {
         setAccordion(state, boolean) {
@@ -163,14 +163,14 @@ const app = {
         setCurrentPageName(state, name) {
             state.currentPageName = name;
         },
-        setAvator(state, path) {
+        setAvatar(state, path) {
             if (path) {
-                localStorage.avatorImgPath = path;
-                state.avatorImgPath = path;
+                localStorage.avatarImgPath = path;
+                state.avatarImgPath = path;
             } else {
-                state.avatorImgPath = localStorage.avatorImgPath;
+                state.avatarImgPath = localStorage.avatarImgPath;
             }
-            console.log("avatorImgPath", state.avatorImgPath);
+            console.log("avatarImgPath", state.avatarImgPath);
         },
         switchLang(state, lang) {
             state.lang = lang;
@@ -183,7 +183,7 @@ const app = {
             state.messageCount = count;
         },
         increateTag(state, tagObj) {
-            if (!Util.oneOf(tagObj.name, state.dontCache)) {
+            if (!Util.oneOf(tagObj.name, state.notCache)) {
                 state.cachePage.push(tagObj.name);
                 localStorage.cachePage = JSON.stringify(state.cachePage);
             }
