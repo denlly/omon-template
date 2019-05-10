@@ -1,4 +1,4 @@
-import { otherRouter, appRouter } from "@/router/router";
+import * as router from "@/router/router";
 import Util from "@/libs/util";
 import Cookies from "js-cookie";
 import Vue from "vue";
@@ -16,8 +16,9 @@ const app = {
         currentPageName: "",
         currentPath: [], // 面包屑数组
         menuList: [],
-        routers: [otherRouter, ...appRouter], // 总路由
-        tagsList: [otherRouter, ...appRouter], // tags-page-opened
+        routers: [...router.other, ...router.dashboard], // 总路由
+        currentRouterGroup: "dashboard",
+        tagsList: [...router.other, ...router.dashboard], // tags-page-opened
         messageCount: 0,
         accordion: true,
         avatarImgPath: ""

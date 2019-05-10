@@ -1,7 +1,7 @@
 <template>
     <nav class="main_top_nav">
         <ul class="main_top_nav-list">
-            <li class="main_top_nav-item" v-for="nav in navlist">
+            <li class="main_top_nav-item" v-for="nav in navList">
                 <a class="main_top_nav-link" v-text="nav.title" @click="doClick(nav)"></a>
             </li>
         </ul>
@@ -19,13 +19,13 @@
         components: {}
     })
     export default class extends Vue {
-        navlist: [] = [{
+        navList: [] = [{
             title: "站点",
             name: "website",
         }, {
-            title: "应用",
-            name: "website",
-        }, {
+        //     title: "应用",
+        //     name: "application",
+        // }, {
             title: "会员",
             name: "member",
         }, {

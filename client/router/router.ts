@@ -1,20 +1,34 @@
 // router.js
 // 作为Main组件的子页面展示但是不在左侧菜单显示的路由写在otherRouter里
-export const otherRouter = {
-    path: "/",
-    name: "otherRouter",
-    children: [
-        {
-            path: "/index",
-            title: "主页",
-            name: "index",
-            icon: "ios-home"
-        }
-    ]
-};
+export const other = [
+    {
+        path: "/home",
+        title: "主页",
+        name: "home",
+        icon: "ios-home"
+    },
+    {
+        path: "/403",
+        title: "错误403",
+        name: "error-403",
+        icon: "alert-circled"
+    },
+    {
+        path: "/404",
+        title: "错误404",
+        name: "error-404",
+        icon: "alert-circled"
+    },
+    {
+        path: "/500",
+        title: "错误500",
+        name: "error-500",
+        icon: "alert-circled"
+    }
+];
 
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
-export const appRouter = [
+export const member = [
     {
         path: "/form",
         icon: "android-checkbox",
@@ -78,6 +92,64 @@ export const appRouter = [
                 title: "500错误",
                 name: "error-page-500",
                 icon: "settings"
+            }
+        ]
+    }
+];
+
+export const order = [
+    {
+        path: "/order",
+        icon: "android-checkbox",
+        name: "form",
+        title: "表单编辑",
+        children: [
+            {
+                path: "/order",
+                icon: "android-checkbox",
+                name: "form",
+                title: "表单编辑"
+            }
+        ]
+    }
+];
+
+export const dashboard = [
+    {
+        icon: "android-checkbox",
+        name: "master",
+        title: "系统用戶",
+        children: [
+            {
+                path: "/master/",
+                icon: "android-checkbox",
+                name: "master-index",
+                title: "管理员管理"
+            },
+            {
+                path: "/master/role/",
+                icon: "android-checkbox",
+                name: "master-role",
+                title: "角色管理"
+            },
+            {
+                path: "/master/log/",
+                icon: "android-checkbox",
+                name: "master-log",
+                title: "管理日志"
+            }
+        ]
+    },
+    {
+        icon: "android-checkbox",
+        name: "website",
+        title: "站点管理",
+        children: [
+            {
+                path: "/website/",
+                icon: "android-checkbox",
+                name: "website-index",
+                title: "站点管理"
             }
         ]
     }
