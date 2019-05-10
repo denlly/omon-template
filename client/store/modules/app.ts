@@ -23,9 +23,13 @@ const app = {
         avatarImgPath: ""
     },
     mutations: {
-        setAccordion(state, boolean) {
-            state.accordion = boolean;
+        setAccordion(state, isAccordion) {
+            state.accordion = isAccordion;
         },
+        getAccordion(state) {
+            return state.accordion;
+        },
+
         setTagsList(state, list) {
             state.tagsList.push(...list);
         },

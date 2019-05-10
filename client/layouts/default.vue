@@ -85,8 +85,7 @@
 									<Avatar
 										:src="avatarPath"
 										style="background: #619fe7;margin-left: 10px; background: url('https://robohash.org/Sebastien_Thorsby') no-repeat center center; background-size: cover;"
-									>
-									</Avatar>
+									></Avatar>
 									<a href="javascript:void(0)">
 										<span class="main-user-name">
 											{{ userName }}
@@ -143,7 +142,7 @@ import MessageTip from "@/components/shards/message-tip.vue";
 })
 export default class extends Vue {
 	shrink: boolean = false;
-	userName: string = "fanxiaodong";
+	userName: string = "";
 	isFullScreen: boolean = false;
 	openedSubmenuArr: any = this.$store.state.app.openedSubmenuArr;
 
@@ -174,10 +173,14 @@ export default class extends Vue {
 	get accordion() {
 		return this.$store.state.app.accordion;
 	}
-
+	async asyncData({ $axios, store, self, error }): Promise<any> {
+		this.init();
+	}
 	init() {
+		debugger;
+		//[TODO: Data from backend]
 		this.$store.commit("setAccordion", true);
-		this.userName = Cookies.get("user");
+		this.userName = "Haha Denlly"; //
 		let messageCount = 3;
 		this.messageCount = messageCount.toString();
 		this.$store.commit("setMessageCount", 3);
@@ -187,9 +190,11 @@ export default class extends Vue {
 			name: "other"
 		});
 	}
+	// toggle left MenuBar
 	toggleClick() {
 		this.shrink = !this.shrink;
 	}
+	// handler of Avatar Dropdown
 	async handleClickUserDropdown(name) {
 		if (name === "ownSpace") {
 			util.openNewPage(this, "ownspace_index");
@@ -215,25 +220,6 @@ export default class extends Vue {
 				this.$router.go({
 					path: "login"
 				})
-			);
-		}
-	}
-	checkTag(name) {
-		// console.log('pageTagsList--------', this.pageTagsList)
-		let openpageHasTag = this.pageTagsList.some(item => {
-			// console.log('openpageHasTag--------', item.name)
-			if (item.name === name) {
-				return true;
-			}
-		});
-		if (!openpageHasTag) {
-			//  解决关闭当前标签后再点击回退按钮会退到当前页时没有标签的问题
-			// console.log('openNewPage--------', name)
-			util.openNewPage(
-				this,
-				name,
-				this.$route.params || {},
-				this.$route.query || {}
 			);
 		}
 	}
