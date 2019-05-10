@@ -19,8 +19,16 @@
 				>
 					<div slot="top" class="logo-con">
 						<!--[TODO: change svg logo] -->
-						<!-- <img v-show="!shrink" src="../assets/images/logo.jpg" key="max-logo" />
-	                        <img v-show="shrink" src="../assets/images/logo-min.jpg" key="min-logo" />-->
+						<img
+							v-show="!shrink"
+							src="../assets/images/logo.png"
+							key="max-logo"
+						/>
+						<img
+							v-show="shrink"
+							src="../assets/images/logo-mini.svg"
+							key="min-logo"
+						/>
 					</div>
 				</shrinkable-menu>
 			</div>
