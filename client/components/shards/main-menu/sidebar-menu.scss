@@ -14,5 +14,15 @@
             background: #495060;
             color: rgba(255, 255, 255, 1);
         }
+
+        &-selected {
+            background-color: #1890ff;
+            color: #fff;
+
+            &:hover {
+                background-color: #1890ff;
+                color: #fff;
+            }
+        }
     }
 }
