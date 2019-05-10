@@ -59,9 +59,9 @@
 					</div>
 					<div class="header-avator-con">
 						<!-- <full-screen v-model="isFullScreen" @on-change="fullscreenChange"></full-screen> -->
-						<lock-screen></lock-screen>
+						<!-- <lock-screen></lock-screen> -->
 						<message-tip :unread="mesCount"></message-tip>
-						<theme-switch></theme-switch>
+						<!-- <theme-switch></theme-switch> -->
 						<div class="user-dropdown-menu-con">
 							<Row
 								type="flex"
@@ -71,28 +71,28 @@
 							>
 								<Dropdown
 									transfer
-									trigger="click"
+									trigger="hover"
 									@on-click="handleClickUserDropdown"
 								>
+									<Avatar
+										:src="avatorPath"
+										style="background: #619fe7;margin-left: 10px; background: url('https://robohash.org/Sebastien_Thorsby') no-repeat center center; background-size: cover;"
+									>
+									</Avatar>
 									<a href="javascript:void(0)">
-										<span class="main-user-name">{{
-											userName
-										}}</span>
-										<Icon type="arrow-down-b"></Icon>
+										<span class="main-user-name">
+											{{ userName }}
+										</span>
 									</a>
 									<DropdownMenu slot="list">
-										<DropdownItem name="ownSpace"
-											>个人中心</DropdownItem
-										>
-										<DropdownItem name="loginout" divided
-											>退出登录</DropdownItem
-										>
+										<DropdownItem name="ownSpace">
+											个人中心
+										</DropdownItem>
+										<DropdownItem name="loginout" divided>
+											退出登录
+										</DropdownItem>
 									</DropdownMenu>
 								</Dropdown>
-								<Avatar
-									:src="avatorPath"
-									style="background: #619fe7;margin-left: 10px;"
-								></Avatar>
 							</Row>
 						</div>
 					</div>
@@ -135,7 +135,7 @@ import MessageTip from "@/components/shards/message-tip.vue";
 })
 export default class extends Vue {
 	shrink: boolean = false;
-	userName: string = "";
+	userName: string = "fanxiaodong";
 	isFullScreen: boolean = false;
 	openedSubmenuArr: any = this.$store.state.app.openedSubmenuArr;
 
