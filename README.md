@@ -21,9 +21,9 @@ $ npm run generate
 
 focus of version 0.1
 
-[ ] master management
-[ ] system management
-[ ] website & domain
-[ ] page of website
-[ ] theme management
-[ ] article management
+-   [ ] master management
+-   [ ] system management
+-   [ ] website & domain
+-   [ ] page of website
+-   [ ] theme management
+-   [ ] article management
