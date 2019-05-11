@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install # Or yarn install
 
@@ -18,3 +18,12 @@ $ npm start
 # generate static project
 $ npm run generate
 ```
+
+focus of version 0.1
+
+[ ] master management
+[ ] system management
+[ ] website & domain
+[ ] page of website
+[ ] theme management
+[ ] article management
