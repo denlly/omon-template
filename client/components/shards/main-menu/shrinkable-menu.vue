@@ -13,7 +13,7 @@
 			v-show="shrink"
 			:menu-theme="theme"
 			:menu-list="menuList"
-			:icon-color="shrinkIconColor"
+			:iconColor="shrinkIconColor"
 			@on-change="handleChange"
 		></sidebar-menu-shrink>
 	</div>
@@ -29,7 +29,7 @@
 import { Component, Vue, Prop } from "nuxt-property-decorator";
 import sidebarMenu from "./sidebar-menu.vue";
 import sidebarMenuShrink from "./sidebar-menu-shrink.vue";
-import { ThemeEnum } from "@/enums/theme.enum";
+
 @Component({
 	components: {
 		sidebarMenu,
@@ -51,9 +51,9 @@ export default class extends Vue {
 
 	@Prop({
 		type: String,
-		default: ThemeEnum.dark
+		default: "dark",
 	})
-	readonly theme!: ThemeEnum;
+	readonly theme!: "dark"|"light";
 	@Prop({
 		type: Function
 	})
@@ -71,10 +71,10 @@ export default class extends Vue {
 	readonly accordion!: [];
 
 	get bgColor() {
-		return this.theme === ThemeEnum.dark ? "#495060" : "#fff";
+		return this.theme === "dark" ? "#495060" : "#fff";
 	}
 	get shrinkIconColor() {
-		return this.theme === ThemeEnum.dark ? "#fff" : "#495060";
+		return this.theme === "dark" ? "#fff" : "#495060";
 	}
 
 	handleChange(name: any) {

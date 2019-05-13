@@ -59,11 +59,6 @@
 						<div class="main-button-group">
 							<main-top-nav></main-top-nav>
 						</div>
-						<!-- <div class="main-breadcrumb">
-								<breadcrumb-nav
-									:currentPath="currentPath"
-								></breadcrumb-nav>
-							</div> -->
 					</div>
 					<div class="header-avatar-con">
 						<!-- <full-screen v-model="isFullScreen" @on-change="fullscreenChange"></full-screen> -->
@@ -106,12 +101,16 @@
 				</div>
 				<div class="tags-con">
 					<!-- <tags-page-opene>d :pageTagsList="pageTagsList"></tags-page-opened> -->
+					<div class="main-breadcrumb">
+						<breadcrumb-nav  :currentPath="currentPath" ></breadcrumb-nav>
+					</div>
 				</div>
 			</div>
 			<div
 				class="single-page-con"
 				:style="{ left: shrink ? '80px' : '256px' }"
 			>
+
 				<div class="single-page">
 					<!-- nuxt -->
 					<nuxt />
@@ -126,7 +125,7 @@ import { Component, Vue } from "nuxt-property-decorator";
 import MainTopNav from "@/components/shards/main-top-nav.vue";
 import ShrinkableMenu from "@/components/shards/main-menu/shrinkable-menu.vue";
 // import tagsPageOpened from '@/components/main-components/tags-page-opened.vue'
-// import breadcrumbNav from '@/components/main-components/breadcrumb-nav.vue'
+import BreadcrumbNav from '@/components/shards/breadcrumb-nav.vue'
 // import lockScreen from '@/components/main-components/lockscreen/lockscreen.vue'
 import MessageTip from "@/components/shards/message-tip.vue";
 // import themeSwitch from '@/components/main-components/theme-switch/theme-switch.vue'
@@ -138,7 +137,8 @@ import MessageTip from "@/components/shards/message-tip.vue";
 		MainTopNav,
 		ShrinkableMenu,
 		// FullScreen,
-		MessageTip
+		MessageTip,
+		BreadcrumbNav
 	}
 })
 export default class extends Vue {
@@ -258,7 +258,7 @@ export default class extends Vue {
 		//this.$store.commit('setOpenedList')
 		// this.checkTag(this.$route.name);
 		//刷新页面时，重新获取头像
-		this.userName = this.$store.state.user.info.name;
+		// this.userName = this.$store.state.user.info.name;
 		this.$store.commit("setAvator", "");
 	}
 	created() {
