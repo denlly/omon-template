@@ -1,6 +1,6 @@
 {
     "name": "omon-template",
-    "description": "This a good practise whit nuxt and typescript.",
+    "description": "This a good practice with nuxt and typescript.",
     "version": "0.0.1",
     "private": true,
     "scripts": {
