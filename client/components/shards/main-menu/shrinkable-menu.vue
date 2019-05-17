@@ -36,7 +36,7 @@ import sidebarMenuShrink from "./sidebar-menu-shrink.vue";
 		sidebarMenuShrink
 	}
 })
-export default class extends Vue {
+export default class ShrinkableMenu extends Vue {
 	@Prop({
 		type: Boolean,
 		default: false
@@ -51,9 +51,9 @@ export default class extends Vue {
 
 	@Prop({
 		type: String,
-		default: "dark",
+		default: "dark"
 	})
-	readonly theme!: "dark"|"light";
+	readonly theme!: "dark" | "light";
 	@Prop({
 		type: Function
 	})

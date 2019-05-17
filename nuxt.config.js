@@ -41,16 +41,19 @@ const axios = {
 };
 const modules = ["@nuxtjs/axios", "~/modules/i18n-json"];
 const build = {
-    extend(config, { isDev, isClient }) {
-        if (isDev && isClient) {
-            config.module.rules.push({
-                enforce: "pre",
-                test: /\.(ts|vue)$/,
-                loader: "tslint-loader",
-                exclude: /(node_modules)/
-            });
-        }
+    babel: {
+        plugins: [["@babel/plugin-proposal-decorators", { legacy: true }], ["@babel/plugin-proposal-class-properties", { loose: true }]]
     }
+    // extend(config, { isDev, isClient }) {
+    //     if (isDev && isClient) {
+    //         config.module.rules.push({
+    //             enforce: "pre",
+    //             test: /\.(ts|vue)$/,
+    //             loader: "tslint-loader",
+    //             exclude: /(node_modules)/
+    //         });
+    //     }
+    // }
 };
 
 // export default {
