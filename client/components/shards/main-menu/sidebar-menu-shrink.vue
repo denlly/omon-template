@@ -73,8 +73,8 @@ import { Component, Vue, Prop } from "nuxt-property-decorator";
 })
 export default class extends Vue {
 	@Prop(Array) readonly menuList!: [];
-    @Prop(String) readonly iconColor : string = "white";
-    @Prop(String) readonly menuTheme : string = "darck";
+	@Prop(String) readonly iconColor: string = "white";
+	@Prop(String) readonly menuTheme: string = "darck";
 
 	changeMenu(active: any) {
 		this.$emit("on-change", active);

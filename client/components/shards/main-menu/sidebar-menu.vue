@@ -33,7 +33,7 @@
 					<span class="layout-text">{{ itemTitle(item) }}</span>
 				</template>
 				<template v-for="child in item.children">
-					<MenuItem :name="child.name" :key="'menuitem' + child.name">
+					<MenuItem :name="child.path" :key="'menuitem' + child.name">
 						<Icon
 							:type="child.icon"
 							:size="iconSize"
@@ -66,8 +66,9 @@ import { Component, Vue } from "nuxt-property-decorator";
 	}
 })
 export default class extends Vue {
-	changeMenu(active) {
-		this.$emit("on-change", active);
+	changeMenu(path: string) {
+		// this.$emit("on-change", active);
+		this.$router.push({ path });
 	}
 	itemTitle(item) {
 		if (typeof item.title === "object") {
